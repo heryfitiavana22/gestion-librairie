@@ -10,7 +10,7 @@
 
     <form action="/authors/update/<?= $author['id']; ?>" method="post">
         <input type="text" name="name" value="<?= $author['name']; ?>" required>
-        <button type="submit">Mis à jour</button>
+        <button type="submit">Mettre à jour</button>
     </form>
 </body>
 </html>
