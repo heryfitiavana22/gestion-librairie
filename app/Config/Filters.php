@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use App\Filters\AuthenticatedFilter;
+use App\Filters\GuestFilter;
 use CodeIgniter\Config\Filters as BaseFilters;
 use CodeIgniter\Filters\Cors;
 use CodeIgniter\Filters\CSRF;
@@ -34,6 +36,8 @@ class Filters extends BaseFilters
         'forcehttps'    => ForceHTTPS::class,
         'pagecache'     => PageCache::class,
         'performance'   => PerformanceMetrics::class,
+        'authenticated' => AuthenticatedFilter::class,
+        'guest'         => GuestFilter::class,
     ];
 
     /**
@@ -72,6 +76,8 @@ class Filters extends BaseFilters
             // 'honeypot',
             // 'csrf',
             // 'invalidchars',
+            'authenticated' => ['except' => ['/', 'books']],
+            'guest' => ['except' => ['login', 'register',]] 
         ],
         'after' => [
             // 'honeypot',
