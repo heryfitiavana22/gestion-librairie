@@ -17,6 +17,12 @@ class AuthController extends BaseController
         $userModel = new UserModel();
 
         $username = $this->request->getPost('username');
+
+        $user = $userModel->getUserByUsername($username);
+        if ($user) {
+            return redirect()->back()->with('usernameTaken', 'Ce nom d\'utilisateur est déjà pris.');
+        }
+
         $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
 
         $userModel->save([
@@ -46,7 +52,7 @@ class AuthController extends BaseController
             return redirect()->to('/');
         }
 
-        return redirect()->back()->with('errorAuth', 'Mot de passe ou identifiant incorrect.');
+        return redirect()->back()->with('authError', 'Mot de passe ou identifiant incorrect.');
     }
 
     public function logout()
