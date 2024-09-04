@@ -16,6 +16,9 @@
         <li>
             <a href="/books">Livres</a>
         </li>
+        <li>
+            <a href="/loans">Emprunts</a>
+        </li>
     </ul>
 </body>
 

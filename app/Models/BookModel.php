@@ -13,7 +13,7 @@ class BookModel extends Model
     public function getBooksWithDetails()
     {
         return $this->select('books.*, loans.id as loan_id, loans.return_date, authors.name as author_name')
-            ->join('loans', 'loans.book_id = books.id AND loans.return_date IS NULL', 'left')
+            ->join('loans', 'loans.book_id = books.id', 'left')
             ->join('authors', 'authors.id = books.author_id')
             ->findAll();
     }

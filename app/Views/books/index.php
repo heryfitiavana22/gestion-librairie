@@ -15,10 +15,10 @@
         <?php foreach ($books as $book): ?>
             <li>
                 <strong><?= $book['title']; ?></strong> by <?= $book['author_name']; ?>
-                <?php if ($book['loan_id']): ?>
-                    <span style="color: red;">(dispo)</span>
+                <?php if ($book['loan_id'] == null): ?>
+                    <span style="color: green;">(dispo) </span>
                 <?php else: ?>
-                    <span style="color: green;">(emprunté)</span>
+                    <span style="color: red;">(emprunté)</span>
                 <?php endif; ?>
                 <a href="/books/edit/<?= $book['id']; ?>">Modifier</a>
                 <a href="/books/delete/<?= $book['id']; ?>">Supprimer</a>

@@ -25,13 +25,13 @@ CREATE TABLE books (
 
 CREATE TABLE loans (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    user_id INT NOT NULL,
+    user_name VARCHAR(100) NOT NULL,
     book_id INT NOT NULL,
     loan_date DATE NOT NULL,
-    return_date DATE NULL,
+    return_date DATE NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
     FOREIGN KEY (book_id) REFERENCES books(id) ON DELETE CASCADE
 );
+
 

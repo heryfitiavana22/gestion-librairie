@@ -27,4 +27,11 @@ $routes->get('/books/edit/(:num)', 'BookController::edit/$1');
 $routes->post('/books/update/(:num)', 'BookController::update/$1');
 $routes->get('/books/delete/(:num)', 'BookController::delete/$1');
 
+$routes->get('/loans', 'LoanController::index');
+$routes->get('/loans/create', 'LoanController::create');
+$routes->post('/loans/store', 'LoanController::store');
+$routes->get('/loans/edit/(:num)', 'LoanController::edit/$1');
+$routes->post('/loans/update/(:num)', 'LoanController::update/$1');
+$routes->get('/loans/delete/(:num)', 'LoanController::delete/$1');
+
 
