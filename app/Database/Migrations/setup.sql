@@ -1,5 +1,7 @@
 CREATE DATABASE `gestion_librairie`;
 
+USE gestion_librairie;
+
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     username VARCHAR(100) NOT NULL UNIQUE,
